@@ -13,12 +13,6 @@ from executor import execute_tasks
 
 app = FastAPI()
 
-@app.get("/health")
-def health_check():
-    return {"status": "healthy"}
-
-app = FastAPI()
-
 # Configure CORS for production and local development
 allowed_origins = [
     "http://localhost:3000",
@@ -32,6 +26,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/health")
+def health_check():
+    return {"status": "healthy"}
 
 class Request(BaseModel):
     task: str
