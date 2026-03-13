@@ -4,3 +4,6 @@ pydantic
 openai
 python-dotenv
 groq
+gunicorn
+uvloop
+httptools

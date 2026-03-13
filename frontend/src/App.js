@@ -14,6 +14,9 @@ function App() {
   const [editingIndex, setEditingIndex] = useState(null);
   const [editValue, setEditValue] = useState("");
 
+  // Use an environment variable for the API URL, falling back to localhost for development
+  const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
+
   useEffect(() => {
     localStorage.setItem("workflowHistory", JSON.stringify(history));
   }, [history]);
@@ -29,7 +32,7 @@ function App() {
     setResult("");
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/run-workflow", {
+      const res = await axios.post(`${API_URL}/run-workflow`, {
         task: task
       });
       setResult(res.data);

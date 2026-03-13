@@ -17,9 +17,17 @@ app = FastAPI()
 def health_check():
     return {"status": "healthy"}
 
+app = FastAPI()
+
+# Configure CORS for production and local development
+allowed_origins = [
+    "http://localhost:3000",
+    "https://task-execution.onrender.com", # Update this after Render provides your frontend URL
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"], # For production, you should ideally specify your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
