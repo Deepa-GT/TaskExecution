@@ -1,5 +1,7 @@
 # AI Workflow Automation Agent
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Deepa-GT/TaskExecution)
+
 A full-stack application that transforms high-level task descriptions into strategic plans and detailed execution results using Groq (Llama 3) or OpenAI.
 
 ## 🚀 Features
@@ -66,6 +68,15 @@ npm start
 
 - The `.env` file is excluded via `.gitignore` to keep your API keys safe.
 - Never commit your actual keys to version control.
+
+## 🌐 Deployment (Render)
+
+The project is pre-configured for one-click deployment using **Render Blueprints**.
+
+1.  Click the **Deploy to Render** button at the top of this file.
+2.  Provide your `GROQ_API_KEY` when prompted.
+3.  Render will automatically provision the **FastAPI Backend** and **React Frontend**.
+4.  Once deployed, Render will link the services together automatically.
 
 ## 📄 License
 
